@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { PropsWithChildren } from "react";
 
+import Footer from "@/components/molecules/footer";
+import { Navbar } from "@/components/molecules/navbar";
+
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +30,11 @@ export default function Layout({ children }: Props) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <div className="min-h-screen flex flex-col items-stretch flex-1">
+          {children}
+        </div>
+        <Footer />
       </body>
     </html>
   );
